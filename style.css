@@ -1,0 +1,376 @@
+/* Base Reset & Variables */
+:root {
+  --bg-dark: #0a1628;
+  --bg-card: #112240;
+  --text-main: #f1f5f9;
+  --text-muted: #cbd5e1;
+  --accent-blue: #1d4ed8;
+  --accent-gold: #facc15;
+  --border-subtle: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header & Navigation */
+.site-header {
+  background-color: rgba(10, 22, 40, 0.95);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.logo span {
+  color: var(--accent-gold);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-gold);
+  background-color: rgba(250, 204, 21, 0.1);
+}
+
+/* Home Page Hero */
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.25rem;
+  background: radial-gradient(circle at top, #173058 0%, var(--bg-dark) 70%);
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-gold);
+  background: rgba(250, 204, 21, 0.12);
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.hero-text {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.cta-button {
+  display: inline-block;
+  background-color: var(--accent-gold);
+  color: #0a1628;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #fde047;
+  transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  color: var(--accent-gold);
+  border: 2px solid var(--accent-gold);
+}
+
+.cta-button.secondary:hover {
+  background-color: rgba(250, 204, 21, 0.12);
+}
+
+/* Biography Page Layout */
+.bio-container {
+  flex: 1;
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3.5rem;
+}
+
+.bio-intro {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.lead {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: var(--text-muted);
+}
+
+.bio-section {
+  margin-bottom: 2.5rem;
+}
+
+.bio-section h2 {
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  color: var(--accent-gold);
+  margin-bottom: 0.85rem;
+}
+
+.bio-section p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+/* Responsive Cards Grid */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.15rem;
+  margin-top: 1.25rem;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* Honors List */
+.honors-list {
+  padding-left: 1.25rem;
+  color: var(--text-muted);
+}
+
+.honors-list li {
+  margin-bottom: 0.65rem;
+}
+
+.honors-list strong {
+  color: var(--text-main);
+}
+
+.back-action {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.85rem 1rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Dynamic Slideshow ("Running Pics") */
+.slideshow-section {
+  margin: 1.5rem auto 2.25rem;
+  max-width: 640px;
+  width: 100%;
+}
+
+.slideshow-frame {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  min-height: 240px;
+  max-height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#slide-image {
+  max-width: 100%;
+  max-height: 390px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.45s ease, transform 0.55s ease;
+}
+
+/* State applied briefly while changing slides */
+#slide-image.is-transitioning {
+  opacity: 0;
+  transform: scale(0.97);
+}
+
+.slide-caption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  min-height: 1.4em;
+  transition: opacity 0.35s ease;
+}
+
+.slideshow-controls {
+  margin-top: 0.9rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.ctrl-btn {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.ctrl-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  background-color: rgba(250, 204, 21, 0.08);
+}
+
+@media (max-width: 600px) {
+  .slideshow-frame {
+    max-height: 300px;
+    min-height: 210px;
+  }
+
+  #slide-image {
+    max-height: 275px;
+  }
+}
+/* Biography Page Full Image Background */
+.bio-page {
+  background-color: #070d19;
+  background-image: url("images/msd5.jpeg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #f8fafc;
+}
+
+.bio-page .bio-intro,
+.bio-page .bio-section {
+  background-color: rgba(7, 13, 25, 0.84);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(250, 204, 21, 0.16);
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.bio-page .bio-section p,
+.bio-page .bio-intro p,
+.bio-page .honors-list li {
+  color: #e2e8f0;
+  line-height: 1.65;
+}
+
+.bio-page .card {
+  background-color: rgba(11, 20, 38, 0.9);
+  border: 1px solid rgba(250, 204, 21, 0.22);
+  border-radius: 10px;
+  padding: 1.15rem 1.25rem;
+}
+
+.bio-page .back-action {
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.bio-page .back-action .cta-button {
+  background-color: rgba(7, 13, 25, 0.92);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
